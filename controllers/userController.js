@@ -1,6 +1,6 @@
 import UserModel from '../models/UserModel.js'
 
-const createUser = async (req,res) =>{
+export default  createUser = async (req,res) =>{
     try {
         await UserModel.create(req.body)
         res.status(201).json({
@@ -9,5 +9,6 @@ const createUser = async (req,res) =>{
     } catch (error) {
         res.status(404).json({
             'message': 'Pailas, algo salio mal xdxd'
+        })
     }
-}
+}    

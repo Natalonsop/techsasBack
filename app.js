@@ -1,11 +1,13 @@
 import dbConnection from "./database/dbConnection.js"
 import express  from "express"
 import cors from "cors"
-
+import router from "./routes/router.js"
 const api = express();
 
 api.use(cors());
 api.use(express.json());
+
+api.use ('/sportech', router)
 
 api.get('/sportech', (req, res) => {
     res.send("puto el que lo lea jejex");
